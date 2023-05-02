@@ -81,5 +81,7 @@ const setXY = (e) => {
     height: 100px;
     background-repeat: no-repeat;
     background-color: transparent;
+    border-radius: 50%;
+    transition: all ease-in-out 0.06s;
 }
 </style>
