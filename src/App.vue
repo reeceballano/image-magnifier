@@ -1,8 +1,6 @@
 <template>
     <div class="app">
-        <div style="position: relative; overflow: hidden;">
-            <MagnifierImage />
-        </div>
+        <MagnifierImage />
     </div>
 </template>
 
