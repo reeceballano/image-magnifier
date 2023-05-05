@@ -22,6 +22,7 @@
             @mouseenter="setSize"
             @mousemove="setXY"
             @mouseleave="magnifier.showMagnifier = false"
+            @wheel="adjustZoom($event)"
         />
     </div>
 </template>
@@ -44,7 +45,7 @@ const magnifier = ref({
     sizeWidth: 0,
     sizeHeight: 0,
     showMagnifier: false,
-    zoomLevel: 2.5,
+    zoomLevel: 2,
     pointerEvents: "none"
 })
 
@@ -60,7 +61,20 @@ const setXY = (e) => {
     const elem = e || window.event;
     magnifier.value.x = elem.offsetX;
     magnifier.value.y = elem.offsetY;
-    console.log(magnifier.value.x)
+    //console.log(magnifier.value.x)
+}
+
+const adjustZoom = (e) => {
+    const { deltaY } = e;
+    let zoomLevel;
+
+    if(deltaY > 0) {
+        zoomLevel = magnifier.value.zoomLevel + 0.5;
+    } else if (deltaY < 0) {
+        zoomLevel = magnifier.value.zoomLevel - 0.5;
+    }
+
+    magnifier.value.zoomLevel = zoomLevel;
 }
 </script>
 
