@@ -32,8 +32,7 @@ import { ref } from 'vue';
 
 const { src } = defineProps({
     src: {
-        type: String,
-        default: "https://images.pexels.com/photos/4175000/pexels-photo-4175000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        type: String
     }
 })
 
