@@ -95,6 +95,5 @@ const adjustZoom = (e) => {
     background-repeat: no-repeat;
     background-color: transparent;
     border-radius: 50%;
-    transition: all ease-in-out 0.06s;
 }
 </style>
