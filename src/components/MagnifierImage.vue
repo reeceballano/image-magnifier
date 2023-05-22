@@ -75,6 +75,21 @@ const adjustZoom = (e) => {
 
     magnifier.value.zoomLevel = zoomLevel;
 }
+
+const checkImage = path =>
+    new Promise(resolve => {
+        setTimeout(() => {
+            const img = new Image();
+            img.onload = () => resolve({path, status: 'ok'});
+            img.onerror = () => resolve({path, status: 'error'});
+    
+            img.src = path;
+        },2000)
+    });
+
+const loadImg = (...paths) => Promise.all(paths.map(checkImage));
+
+await loadImg(src);
 </script>
 
 <style scoped>

@@ -5,7 +5,15 @@
         -->
         <ImgSrc v-model:imgSrc="imgSrc" />
 
-        <MagnifierImage :src="imgSrc" />
+        <Suspense>
+            <template #default>
+                <MagnifierImage :src="imgSrc" />
+            </template>
+
+            <template #fallback>
+                <h2>Loading...</h2>
+            </template>
+        </Suspense>
     </div>
 </template>
 
