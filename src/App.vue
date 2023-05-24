@@ -3,11 +3,13 @@
         <!-- 
             props: src="https://im-awesome.me/your-awesome-image.jpg"
         -->
-        <ImgSrc v-model:imgSrc="imgSrc" />
-
+        
         <Suspense>
             <template #default>
-                <MagnifierImage :src="imgSrc" />
+                <div>
+                    <ImgSrc v-model:imgSrc="imgSrc" />
+                    <MagnifierImage :src="imgSrc" />
+                </div>
             </template>
 
             <template #fallback>
